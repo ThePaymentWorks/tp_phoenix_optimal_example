@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+      <h3>Optimal SilentPost Simulation</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    This page lets you simulate the outcome of a optimal transaction. Below are three types of payment you can make through the optimal api. Feel free to change the values below to test out our sim. Note that the <b>cvdNumber</b> changes the type of response returned from the simulator.
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-4">
+      <div class="card">
+        <h4>Credit Cards</h4>
+        <hr>
+
+        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+          <div class="form-group">
+            <label>Card Number</label>
+            <input class="form-control" name="cardNumber" value="4111 1111 1111 1111"/>
+          </div>
+
+          <div class="form-group">
+            <label>Epiry Month/Year</label>
+            <input class="form-control" name="expiry" value="02/22"/>
+          </div>
+
+          <div class="form-group">
+            <label>CVD/CVV Number</label>
+            <input class="form-control" name="cvdNumber" value="100"/>
+          </div>
+
+          <br/>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="card">
+        <h4>Pre-paid Cards</h4>
+        <hr>
+
+        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+          <div class="form-group">
+            <label>Reference ID</label>
+            <input class="form-control" name="referenceId" value="abc123"/>
+          </div>
+
+          <div class="form-group">
+            <label>Social Security Number (last 4)</label>
+            <input class="form-control" name="lastFourSsn" value="100"/>
+          </div>
+
+          <br/>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="card">
+        <h4>Optimal Customer</h4>
+        <hr>
+
+        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+          <div class="form-group">
+            <label>CVD/CVV Number</label>
+            <input class="form-control" name="cvdNumber" value="100"/>
+          </div>
+
+          <br/>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

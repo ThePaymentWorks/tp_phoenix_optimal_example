@@ -1,0 +1,15 @@
+/* This file is for your main application css. */
+body {
+  font-family: "Numbers Greenback A", "Numbers Greenback B", "Gotham SSm A", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #4A4A4A;
+  background-color: #FEFEFE;
+  padding-bottom: 120px;
+}
+.tp-navbar {
+  padding-top: 8px;
+  background-color: #3A3D3D;
+  border-color: #3A3D3D;
+  border-radius: 0;
+}
