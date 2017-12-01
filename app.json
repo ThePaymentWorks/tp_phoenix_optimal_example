@@ -2,5 +2,10 @@
   "name": "tp_phoenix_optimal_example",
   "description": "A barebones elixir phoenix app to demo integration with optimal and Testing Pays",
   "repository": "https://github.com/heroku/node-js-sampl://github.com/ThePaymentWorks/tp_phoenix_optimal_example",
-  "keywords": ["elixir", "phoenix", "static"]
+  "keywords": ["elixir", "phoenix", "static"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+    }
+  ]
 }
