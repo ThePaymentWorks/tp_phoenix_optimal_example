@@ -1,0 +1,6 @@
+{
+  "name": "tp_phoenix_optimal_example",
+  "description": "A barebones elixir phoenix app to demo integration with optimal and Testing Pays",
+  "repository": "https://github.com/heroku/node-js-sampl://github.com/ThePaymentWorks/tp_phoenix_optimal_example",
+  "keywords": ["elixir", "phoenix", "static"]
+}
