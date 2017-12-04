@@ -1,4 +1,13 @@
 # TpPhoenixOptimalExample
+This is an example application showing how to integrate with Testing Pays and the different methods of working with the Optimal Payment Gateway.
+
+### Getting Started
+To get going quickly just deploy the app to Heroku.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+#### Running locally
 
 To start your Phoenix server:
 
