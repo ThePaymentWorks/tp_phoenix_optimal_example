@@ -17,7 +17,7 @@
         <h4>Credit Cards</h4>
         <hr>
 
-        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+        <form action="http://localhost:8000/<%= Map.fetch!(System.get_env(), "TP_KEY") %>/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
           <div class="form-group">
             <label>Card Number</label>
             <input class="form-control" name="cardNumber" value="4111 1111 1111 1111"/>
@@ -48,7 +48,7 @@
         <h4>Pre-paid Cards</h4>
         <hr>
 
-        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+        <form action="http://localhost:8000/<%= Map.fetch!(System.get_env(), "TP_KEY") %>/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
           <div class="form-group">
             <label>Reference ID</label>
             <input class="form-control" name="referenceId" value="abc123"/>
@@ -74,7 +74,7 @@
         <h4>Optimal Customer</h4>
         <hr>
 
-        <form action="http://localhost:8000/_YOUR_API_KEY_/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
+        <form action="http://localhost:8000/<%= Map.fetch!(System.get_env(), "TP_KEY") %>/optimal/v1/silentPost/<%= Enum.random(1..1_000) %>" method="post">
           <div class="form-group">
             <label>CVD/CVV Number</label>
             <input class="form-control" name="cvdNumber" value="100"/>
