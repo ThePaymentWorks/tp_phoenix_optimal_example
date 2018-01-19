@@ -1,7 +1,7 @@
 defmodule TpPhoenixOptimalExample.Payment do
   alias TpPhoenixOptimalExample.Payment
 
-  defstruct transaction: %{status: :none, errorCode: :none, errorMessage: :none}, transaction_status: :pending
+  defstruct transaction: %{payment_ref: :none, status: :none, errorCode: :none, errorMessage: :none}, transaction_status: :pending
 
   def start_link(name),
     do: Agent.start_link(fn -> %Payment{} end, name: name)

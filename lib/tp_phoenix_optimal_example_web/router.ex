@@ -23,7 +23,7 @@ defmodule TpPhoenixOptimalExampleWeb.Router do
   # Other scopes may use custom stacks.
   scope "/api", TpPhoenixOptimalExampleWeb do
     pipe_through :api
-    post "/optimal/:payment_ref", OptimalController, :resolve_transaction
-    get "/optimal/:payment_ref", OptimalController, :transaction_status
+    get "/optimal/:payment_ref", OptimalController, :resolve_transaction
+    get "/optimalStatus/:payment_ref", OptimalController, :transaction_status
   end
 end

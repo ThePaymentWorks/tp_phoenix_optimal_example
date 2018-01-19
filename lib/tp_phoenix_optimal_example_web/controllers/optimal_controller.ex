@@ -3,13 +3,14 @@ defmodule TpPhoenixOptimalExampleWeb.OptimalController do
 
   alias TpPhoenixOptimalExample.Payment
 
-  def resolve_transaction(conn, %{"payment_ref" => payment_ref, "transaction" => transaction}) do
+  def resolve_transaction(conn, transaction = %{"payment_ref" => payment_ref}) do
     ref = String.to_atom(payment_ref)
 
     Payment.start_link(ref)
     Payment.put_payment(ref, %Payment{transaction: transaction})
-
-    redirect(conn, to: page_path(conn, :index))
+    conn
+    |> put_status(:ok)
+    |> render("index.json", %{})
   end
 
   @doc """
