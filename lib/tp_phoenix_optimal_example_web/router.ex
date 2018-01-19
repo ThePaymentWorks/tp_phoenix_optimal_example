@@ -18,6 +18,8 @@ defmodule TpPhoenixOptimalExampleWeb.Router do
 
     get "/", PageController, :index
     get "/success", PageController, :success
+    get "/errorRedirect", PageController, :error_redirect
+    get "/successRedirect", PageController, :success_redirect
   end
 
   # Other scopes may use custom stacks.

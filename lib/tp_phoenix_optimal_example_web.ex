@@ -40,6 +40,7 @@ defmodule TpPhoenixOptimalExampleWeb do
       import TpPhoenixOptimalExampleWeb.Router.Helpers
       import TpPhoenixOptimalExampleWeb.ErrorHelpers
       import TpPhoenixOptimalExampleWeb.Gettext
+      import FontAwesomePhoenix.HTML
     end
   end
 
