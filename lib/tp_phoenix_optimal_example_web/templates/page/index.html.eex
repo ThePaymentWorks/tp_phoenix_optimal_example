@@ -6,101 +6,134 @@
     </div>
   </div>
 
-  <div class="jumbotron">
-    This page lets you simulate the outcome of a optimal transaction. Below are three types of payment you can make through the optimal api. Feel free to change the values below to test out our sim. Note that the <b>cvdNumber</b> changes the type of response returned from the simulator.
-  </div>
-
-  <div class="row">
-
-    <div class="col-xs-12">
-      <h4>Step 2 - Pick a Payment Method</h4>
-      <hr/>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <h4>Credit Cards</h4>
-        <hr>
-
-        <form action="<%= @uri %>" method="post">
-          <div class="form-group">
-            <label>Card Number</label>
-            <input class="form-control" name="cardNumber" value="4111 1111 1111 1111"/>
-          </div>
-
-          <div class="form-group">
-            <label>Epiry Month/Year</label>
-            <input class="form-control" name="expiry" value="02/22"/>
-          </div>
-
-          <div class="form-group">
-            <label>CVD/CVV Number</label>
-            <input class="form-control" name="cvdNumber" value="100"/>
-          </div>
-
-          <br/>
-
+  <%= if @data["error"] do %>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div class="jumbotron">
           <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <h3 class="brand-danger" style="margin-top: 0">An error was thrown when creating the order.</h3>
+            <%= fa_icon(["times-circle", "5x"], class: "brand-danger") %>
+            <br/>
           </div>
-        </form>
-
-        <br>
-        <br>
-        <br>
+        </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <h4>Pre-paid Cards</h4>
-        <hr>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h4>Params Recieved</h4>
+          <pre><code>
+error: {
+  errorCode: <%= @data["error"]["code"] %>,
+  errorMessage: "<%= @data["error"]["message"] %>"
+}
+          </code></pre>
 
-        <form action="<%= @uri %>" method="post">
-          <div class="form-group">
-            <label>Reference ID</label>
-            <input class="form-control" name="referenceId" value="abc123"/>
-          </div>
+        <br />
 
-          <div class="form-group">
-            <label>Social Security Number (last 4)</label>
-            <input class="form-control" name="lastFourSsn" value="1000"/>
-          </div>
-
-          <br/>
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-
-        <br>
-        <br>
-        <br>
+        <a class="btn btn-primary" href="/">Refresh</a>
       </div>
     </div>
 
+  <% else %>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <h4>Optimal Customer</h4>
-        <hr>
-
-        <form action="<%= @uri %>" method="post">
-          <div class="form-group">
-            <label>CVD/CVV Number</label>
-            <input class="form-control" name="cvdNumber" value="100"/>
-          </div>
-
-          <br/>
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-
-      </div>
+    <div class="jumbotron">
+      This page lets you simulate the outcome of a optimal transaction. Below are three types of payment you can make through the optimal api. Feel free to change the values below to test out our sim. Note that the <b>cvdNumber</b> changes the type of response returned from the simulator.
     </div>
 
-  </div>
+    <div class="row">
+
+      <div class="col-xs-12">
+        <h4>Step 2 - Pick a Payment Method</h4>
+        <hr/>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h4>Credit Cards</h4>
+          <hr>
+
+          <form action="<%= @data["uri"] %>" method="post">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input class="form-control" name="cardNumber" value="4111 1111 1111 1111"/>
+            </div>
+
+            <div class="form-group">
+              <label>Epiry Month/Year</label>
+              <input class="form-control" name="expiry" value="02/22"/>
+            </div>
+
+            <div class="form-group">
+              <label>CVD/CVV Number</label>
+              <input class="form-control" name="cvdNumber" value="100"/>
+            </div>
+
+            <br/>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h4>Pre-paid Cards</h4>
+          <hr>
+
+          <form action="<%= @data["uri"] %>" method="post">
+            <div class="form-group">
+              <label>Reference ID</label>
+              <input class="form-control" name="referenceId" value="abc123"/>
+            </div>
+
+            <div class="form-group">
+              <label>Social Security Number (last 4)</label>
+              <input class="form-control" name="lastFourSsn" value="1000"/>
+            </div>
+
+            <br/>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h4>Optimal Customer</h4>
+          <hr>
+
+          <form action="<%= @data["uri"] %>" method="post">
+            <div class="form-group">
+              <label>CVD/CVV Number</label>
+              <input class="form-control" name="cvdNumber" value="100"/>
+            </div>
+
+            <br/>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
 </div>
