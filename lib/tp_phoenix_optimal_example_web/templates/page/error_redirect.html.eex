@@ -24,9 +24,9 @@
         <h4>Params Recieved</h4>
           <pre><code>
 transaction : {
-  status: "<%= @transaction["status"] %>",
-  errorCode: "<%= @transaction["errorCode"] %>",
-  errorMessage: "<%= @transaction["errorMessage"] %>"
+  status: "<%= @data["transaction"]["status"] %>",
+  errorCode: "<%= @data["transaction"]["errorCode"] %>",
+  errorMessage: "<%= @data["transaction"]["errorMessage"] %>"
 }
           </code></pre>
 
