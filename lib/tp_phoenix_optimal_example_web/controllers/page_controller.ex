@@ -21,9 +21,9 @@ defmodule TpPhoenixOptimalExampleWeb.PageController do
   def error_redirect(conn, %{"transaction" => transaction}),
     do: render(conn, "error_redirect.html", data: %{"transaction" => transaction})
 
-  def success_callback(conn, %{"transaction" => transaction}),
+  def success_callback(conn, %{"transaction" => _}),
     do: render(conn, "index.json", %{})
 
-  def error_callback(conn, %{"transaction" => transaction}),
+  def error_callback(conn, %{"transaction" => _}),
     do: render(conn, "index.json", %{})
 end
