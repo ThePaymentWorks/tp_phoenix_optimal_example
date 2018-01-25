@@ -35,7 +35,7 @@ defmodule TpPhoenixOptimalExample.Optimal.SuccessOrder do
         },
         %{
           format: "get",
-          rel: "on_error",
+          rel: "on_decline",
           returnKeys: [
             "transaction.status",
             "transaction.errorCode",
