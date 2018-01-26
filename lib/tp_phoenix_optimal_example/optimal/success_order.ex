@@ -10,7 +10,7 @@ defmodule TpPhoenixOptimalExample.Optimal.SuccessOrder do
             "transaction.errorCode",
             "transaction.errorMessage"
           ],
-          uri: "http://localhost:4000/successRedirect"
+          uri: "https://tp-phoenix-optimal.herokuapp.com/successRedirect"
         },
         %{
           rel: "on_error",
@@ -19,7 +19,7 @@ defmodule TpPhoenixOptimalExample.Optimal.SuccessOrder do
             "transaction.errorCode",
             "transaction.errorMessage"
           ],
-          uri: "http://localhost:4000/errorRedirect"
+          uri: "https://tp-phoenix-optimal.herokuapp.com/errorRedirect"
         }
       ],
       callback: [
@@ -31,7 +31,7 @@ defmodule TpPhoenixOptimalExample.Optimal.SuccessOrder do
             "transaction.errorCode",
             "transaction.errorMessage"
           ],
-          uri: "http://localhost:4000/successCallback"
+          uri: "https://tp-phoenix-optimal.herokuapp.com/successCallback"
         },
         %{
           format: "get",
@@ -41,7 +41,7 @@ defmodule TpPhoenixOptimalExample.Optimal.SuccessOrder do
             "transaction.errorCode",
             "transaction.errorMessage"
           ],
-          uri: "http://localhost:4000/errorCallback"
+          uri: "https://tp-phoenix-optimal.herokuapp.com/errorCallback"
         }
       ]
 end
