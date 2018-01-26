@@ -1,7 +1,7 @@
 defmodule TpPhoenixOptimalExample.Optimal do
   alias TpPhoenixOptimalExample.Optimal.SuccessOrder
 
-  @url "http://localhost:8000/#{Map.fetch!(System.get_env(), "TP_KEY")}/optimal/v1/orders/"
+  @url "https://api.testingpays.com/#{Map.fetch!(System.get_env(), "TP_KEY")}/optimal/v1/orders/"
 
   def create_order do
     # Get an example order struct

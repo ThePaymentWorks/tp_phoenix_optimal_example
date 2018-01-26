@@ -38,7 +38,7 @@ error: {
   <% else %>
 
     <div class="jumbotron">
-      This page lets you simulate the outcome of a optimal transaction. Below are three types of payment you can make through the optimal api. Feel free to change the values below to test out our sim. Note that the <b>cvdNumber</b> changes the type of response returned from the simulator.
+      This page lets you simulate the outcome of a optimal transaction by using the Optimal Orders Sim (v1) and Optimal SilentPost Sim (v2) from <a href="https://testingpays.com">Testing Pays</a>. Below are three types of payment you can make through the optimal api. Feel free to change the values below to test out our sim. Note that the <b>cvdNumber</b> changes the type of response returned from the simulator.
     </div>
 
     <div class="row">
